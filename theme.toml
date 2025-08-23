@@ -1,13 +1,14 @@
-name = 'Terminal'
+name = 'Terminal2'
 license = 'MPL-2.0'
-licenselink = 'https://github.com/techbarrack/terminal-hugo-theme/blob/master/LICENSE'
-description = 'Terminal is a theme inspired by the cobalt 2 theme for terminal on macOS. It uses tailwind CSS to achieve the look and feel'
+licenselink = 'https://github.com/alvarocleite/terminal2-hugo-theme/blob/master/LICENSE'
+description = 'Terminal2 is a fork or Terminal, a theme inspired by the cobalt 2 theme for terminal on macOS. It uses tailwind CSS to achieve the look and feel'
 
 # The home page of the theme, where the source can be found
-homepage = 'https://github.com/techbarrack/terminal-hugo-theme'
+homepage = 'https://github.com/alvarocleite/terminal2-hugo-theme'
 
 # If you have a running demo of the theme
-demosite = 'https://nayanseth.com'
+# TODO: Add a demo site
+#demosite = 'https://nayanseth.com'
 
 # Taxonomy terms
 tags = ['blog', 'personal', 'responsive', 'terminal', 'dark mode', 'minimal', 'dark']
@@ -15,5 +16,6 @@ features = ['blog', 'personal', 'responsive', 'terminal', 'dark mode', 'minimal'
 
 # If the theme has a single author
 [author]
-  name = 'Nayan Seth'
-  homepage = 'https://nayanseth.com'
+  name = 'Alvaro Castro Leite'
+# TODO: Add personal site
+#  homepage = 'https://nayanseth.com'

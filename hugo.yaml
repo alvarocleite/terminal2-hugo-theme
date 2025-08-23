@@ -1,7 +1,7 @@
 baseURL: 'https://mywebsite.com/'
 languageCode: 'en-us'
 title: 'My Website'
-theme: 'terminal'
+theme: 'terminal2'
 timeZone: "Asia/Kolkata"
 menus:
   main:
@@ -37,7 +37,7 @@ markup:
     superscript: true
     unsafe: true
 # ignoreFiles:
-#   - "themes/terminal/content"
+#   - "themes/terminal2/content"
 # outputs:
 #   blog:
 #     - HTML
@@ -64,4 +64,4 @@ params:
 module:
   hugoVersion:
     extended: false
-    min: "0.116.0"
+    min: "0.148.0"
