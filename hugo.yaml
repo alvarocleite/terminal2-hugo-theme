@@ -2,7 +2,7 @@ baseURL: 'https://mywebsite.com/'
 languageCode: 'en-us'
 title: 'My Website'
 theme: 'terminal2'
-timeZone: "Asia/Kolkata"
+timeZone: "Europe/Lisbon"
 menus:
   main:
     - identifier: about
@@ -58,8 +58,12 @@ params:
     - name: linkedin
       url: https://linkedin.com/in/myusername
     - name: "buy me a coffee"
-      url: https://www.buymeacoffee.com/myusername
-  disqus: "mydisquscode"
+      url: https://www.buymeacoffee.com/myusername  
+  disqus: false
+# Optional variables that used to build the homepage
+  mainAuthor: "My Name"
+  tagline: "My Tagline"
+  avatarUrl: "https://tinyurl.com/45aym7mk"
 
 module:
   hugoVersion:
