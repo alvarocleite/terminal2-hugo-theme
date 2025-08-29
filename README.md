@@ -1,4 +1,4 @@
-# terminal-hugo-theme
+# terminal2-hugo-theme
 
 A theme for hugo made using tailwind CSS library and mono font family
 
