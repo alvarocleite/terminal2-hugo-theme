@@ -64,6 +64,8 @@ params:
   mainAuthor: "My Name"
   tagline: "My Tagline"
   avatarUrl: "https://tinyurl.com/45aym7mk"
+# Menu titles
+  menuTitle: "My Website"
 
 module:
   hugoVersion:
