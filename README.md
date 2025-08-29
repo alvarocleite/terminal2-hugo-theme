@@ -2,11 +2,13 @@
 
 A theme for hugo made using tailwind CSS library and mono font family
 
+<!--
 # Live Demo
 
 https://nayanseth.com
 
 ![Theme Screenshot](https://raw.githubusercontent.com/techbarrack/terminal-hugo-theme/master/images/screenshot.png)
+-->
 
 # Setup
 
@@ -18,15 +20,15 @@ https://nayanseth.com
 		2. For prod run `npm run prod` -> This generates only the CSS classes from tailwind that you are using in the theme
 4. `hugo new site <SITE_NAME>`
 5. `cd <SITE_NAME>`
-6. `git submodule add git@github.com:techbarrack/terminal-hugo-theme.git themes/terminal`
-7. Replace the contents of `<SITE_NAME>/hugo.yaml` with `<SITE_NAME>/themes/terminal/hugo.yaml`
+6. `git submodule add git@github.com:alvarocleite/terminal2-hugo-theme.git themes/terminal2`
+7. Replace the contents of `<SITE_NAME>/hugo.yaml` with `<SITE_NAME>/themes/terminal2/hugo.yaml`
 8. In the root directory of the hugo site, create the directory: `mkdir -p layouts/partials/third_party_js`. This directory is to store any sort of third party javascript like google analytics, disqus, etc
 10. Run the website `hugo server --buildDrafts --disableFastRender --gc --ignoreCache --noHTTPCache --forceSyncStatic --verbose -w`		
 
 # Modifying the Contents
 
 1. Uncomment the ignoreFiles attribute in `<SITE_NAME>/hugo.yaml`
-2. Start adding the files in `<SITE_NAME>/content` by replicating what is present in `<SITE_NAME>/themes/terminal/content`
+2. Start adding the files in `<SITE_NAME>/content` by replicating what is present in `<SITE_NAME>/themes/terminal2/content`
 3. Update the meta content in `head.html`
 
 # Third Party JS
