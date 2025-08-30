@@ -1,5 +1,5 @@
-{{ $blogPages := .Scratch.Get "blogPages" }}
-{{ $paginator := .Paginate ($blogPages) }}
+{{ $termPages := .Scratch.Get "termPages" }}
+{{ $paginator := .Paginate ($termPages) }}
 {{ range $paginator.Pages.GroupByDate "January 2006" }}
   <div class="flex flex-col gap-4">
     <h2 class="text-2xl max-sm:text-xl font-bold">📅 {{ .Key }}</h2>
