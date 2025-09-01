@@ -1,7 +1,7 @@
 ---
 title: "{{ replace .File.ContentBaseName "-" " " | title }}"
 date: '{{ .Date }}'
-layout: "posts"
+layout: "post"
 authors: []
 tags: []
 draft: true
