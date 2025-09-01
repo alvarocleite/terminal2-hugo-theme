@@ -1,21 +1,101 @@
-{{ $termPages := .Scratch.Get "termPages" }}
-{{ $paginator := .Paginate ($termPages) }}
-{{ range $paginator.Pages.GroupByDate "January 2006" }}
-  <div class="flex flex-col gap-4">
-    <h2 class="text-2xl max-sm:text-xl font-bold">📅 {{ .Key }}</h2>
-    <ul class="flex flex-col">
-      {{ range .Pages.ByDate.Reverse }}
-        <a href="{{ .RelPermalink }}">
-          <div class="flex flex-row justify-between border-l px-4 py-2 hover:text-sky-400">
-            <h2>{{ .LinkTitle }}</h2>
-            <p class="max-lg:hidden">{{ .Date | time.Format ":date_medium" }}</p>
-          </div>
-        </a>
-      {{ end }}
-    </ul>
-  </div>
+{{ $paginator := "" }}
+
+<!-- Pagination for tags -->
+{{ if eq .Kind "taxonomy" }}
+  {{ $pages := .Data.Pages }}
+  {{ $paginator = .Paginate $pages }}
+  {{ range $paginator.Pages.GroupBy "Section" }}
+    <div class="flex flex-col gap-4">
+      <h2 class="text-2xl max-sm:text-xl font-bold">
+        {{ if eq .Key "posts" }}
+          ✏️ {{ .Key | title }}
+        {{ else if eq .Key "projects" }}
+          🤖 {{ .Key | title }}
+        {{ else }}
+          {{ .Key | title }}
+        {{ end }}
+      </h2>
+      <ul class="flex flex-col">
+        {{ range .Pages.ByDate.Reverse }}
+          <a href="{{ .RelPermalink }}">
+            <div class="flex flex-row justify-between border-l px-4 py-2 hover:text-sky-400">
+              <h2>{{ .LinkTitle }}</h2>
+              <p class="max-lg:hidden">{{ .Date | time.Format ":date_medium" }}</p>
+            </div>
+          </a>
+        {{ end }}
+      </ul>
+    </div>
+  {{ end }}
+
+<!-- Pagination for Projects -->
+  {{ else if eq .Type "projects" }}
+  {{ $pages := where .Site.RegularPages "Type" "projects" }}
+  {{ $paginator = .Paginate $pages }}
+  {{ range $paginator.Pages.GroupBy "Section" }}
+    <div class="flex flex-col gap-4">
+    {{ range .Pages.ByWeight }}
+      <h2 class="text-2xl max-sm:text-xl font-bold"> </h2>
+      <ul class="flex flex-col">
+          <a href="{{ .RelPermalink }}">
+            <div class="flex flex-col gap-2 border-l px-4 py-2 hover:text-sky-400">
+              <div class="flex flex-row justify-between">
+                <h2 class="text-2xl max-sm:text-xl font-bold">{{ .LinkTitle }}</h2>
+                <p class="max-lg:hidden">{{ .Date | time.Format ":date_medium" }}</p>
+              </div>
+              <p>{{ .Summary }}</p>
+            </div>
+          </a>
+      </ul>
+    {{ end }}
+    </div>
+  {{ end }}
+
+<!-- Pagination for Posts -->
+  {{ else if eq .Type "posts" }}
+  {{ $pages := where .Site.RegularPages "Type" "posts" }}
+  {{ $paginator = .Paginate $pages }}
+  {{ range $paginator.Pages.GroupByDate "January 2006" }}
+    <div class="flex flex-col gap-4">
+      <h2 class="text-2xl max-sm:text-xl font-bold">📅 {{ .Key }}</h2>
+      <ul class="flex flex-col">
+        {{ range .Pages.ByDate.Reverse }}
+          <a href="{{ .RelPermalink }}">
+            <div class="flex flex-col gap-2 border-l px-4 py-2 hover:text-sky-400">
+              <div class="flex flex-row justify-between">
+                <h2 class="text-2xl max-sm:text-xl font-bold">{{ .LinkTitle }}</h2>
+                <p class="max-lg:hidden">{{ .Date | time.Format ":date_medium" }}</p>
+              </div>
+              <p>{{ .Summary }}</p>
+            </div>
+          </a>
+        {{ end }}
+      </ul>
+    </div>
+  {{ end }}
+
+<!-- Generic Pagination -->
+{{ else }}
+  {{ $pages := .Data.Pages }}
+  {{ $paginator = .Paginate $pages }}
+  {{ range $paginator.Pages.GroupByDate "January 2006" }}
+    <div class="flex flex-col gap-4">
+      <h2 class="text-2xl max-sm:text-xl font-bold">📅 {{ .Key }}</h2>
+      <ul class="flex flex-col">
+        {{ range .Pages.ByDate.Reverse }}
+          <a href="{{ .RelPermalink }}">
+            <div class="flex flex-row justify-between border-l px-4 py-2 hover:text-sky-400">
+              <h2>{{ .LinkTitle }}</h2>
+              <p class="max-lg:hidden">{{ .Date | time.Format ":date_medium" }}</p>
+            </div>
+          </a>
+        {{ end }}
+      </ul>
+    </div>
+  {{ end }}
 {{ end }}
 
+<!-- Pagination Controls -->
 <div class="flex flex-row items-center justify-center gap-10">
   {{ if $paginator.HasPrev }}
     <a href="{{ $paginator.Prev.URL }}" class="font-bold border border-sky-400 p-2 hover:bg-sky-400 focus:text-sky-400 text-center">Previous</a>

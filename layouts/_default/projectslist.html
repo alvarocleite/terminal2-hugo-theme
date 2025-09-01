@@ -12,8 +12,7 @@
       <div class="prose prose-invert max-w-full">
         {{ .Content }}
       </div>
-      {{ $projectPages := where .Site.RegularPages "Section" "projects" }}
-      {{ .Scratch.Set "projectPages" $projectPages }}
+      {{ $paginator := .Paginate ( where .Site.RegularPages "Section" "projects" ) }}
       {{ partial "pagination.html" . }}
     </div>
     <!-- Sidebar -->
