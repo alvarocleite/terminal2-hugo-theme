@@ -5,15 +5,15 @@
     <!-- Main Content-->
     <div class="flex flex-col w-full gap-8">
       <div class="flex flex-row gap-4">
-        <p class="text-3xl max-sm:text-2xl">📝</p>
-        <h1 class="text-3xl max-sm:text-2xl font-bold">Generic List</h1>
+        <p class="text-3xl max-sm:text-2xl">🚀</p>
+        <h1 class="text-3xl max-sm:text-2xl font-bold">Projects</h1>
       </div>
       <hr/>
       <div class="prose prose-invert max-w-full">
         {{ .Content }}
       </div>
-      {{ $genericPages := where .Site.RegularPages "Section" "not in" (slice "projects" "posts") }}
-      {{ .Scratch.Set "genericPages" $genericPages }}
+      {{ $projectPages := where .Site.RegularPages "Section" "projects" }}
+      {{ .Scratch.Set "projectPages" $projectPages }}
       {{ partial "pagination.html" . }}
     </div>
     <!-- Sidebar -->
