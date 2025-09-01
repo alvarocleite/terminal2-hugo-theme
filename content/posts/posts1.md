@@ -7,6 +7,8 @@ authors: ["Álvaro Castro Leite"]
 draft: true
 ---
 
+# Post 1
+
 Hello!
 
 This is a post.

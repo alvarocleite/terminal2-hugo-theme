@@ -9,4 +9,6 @@ authors: ["Álvaro Castro Leite"]
 draft: true
 ---
 
+# Project 1
+
 Hello! This is a project. 
