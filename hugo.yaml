@@ -9,17 +9,22 @@ menus:
       name: About
       url: /about
       weight: 20
-    - identifier: blog
-      name: Blog
-      url: /blog
+    - identifier: posts
+      name: Posts
+      url: /posts
       weight: 30
+    - identifier: projects
+      name: Projects
+      url: /projects
+      weight: 40
     - identifier: tags
       name: Tags
       url: /tags
-      weight: 40
+      weight: 50
 pagerSize: 10
 permalinks:
-  blog: "/blog/:year/:month/:day/:title/"
+  posts: "/posts/:year/:month/:day/:title/"
+  projects: "/projects/:year/:month/:title/"
 taxonomies:
   tag: "tags"
   author: "authors"
@@ -36,17 +41,24 @@ markup:
     # (enable to allow ^ and ~ for superscript and subscript)
     superscript: true
     unsafe: true
-# ignoreFiles:
+ignoreFiles:
 #   - "themes/terminal2/content"
-# outputs:
-#   blog:
-#     - HTML
-#     - RSS
+outputs:
+  home:
+    - HTML
+    - RSS
 #     - sitemap-blog.xml
-#   home:
-#     - HTML
-#     - RSS
+  section:
+    - HTML
+    - RSS
 #     - sitemap.xml
+  page:
+    - HTML
+#     - sitemap-posts.xml
+  taxonomy:
+    - HTML
+    - RSS
+#     - sitemap-projects.xml
 params:
   social:
     - name: github
@@ -66,6 +78,9 @@ params:
   avatarUrl: "https://tinyurl.com/45aym7mk"
 # Menu titles
   menuTitle: "My Website"
+  mainSections:
+    - posts
+    - projects
 
 module:
   hugoVersion:

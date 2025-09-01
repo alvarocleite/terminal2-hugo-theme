@@ -1,7 +1,7 @@
 ---
 title: "{{ replace .File.ContentBaseName "-" " " | title }}"
 date: '{{ .Date }}'
-layout: 'projects'
+layout: 'project'
 authors: []
 tags: []
 label: 
