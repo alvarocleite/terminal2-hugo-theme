@@ -86,3 +86,12 @@ module:
   hugoVersion:
     extended: false
     min: "0.148.0"
+
+# Firebase Hosting configuration
+firebaseEnabled: false
+deployment:
+  targets:
+    - name: firebase
+      URL: "https://sitename.firebaseapp.com"
+  defaultTarget: "firebase"
+  
