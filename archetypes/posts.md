@@ -5,6 +5,8 @@ layout: "post"
 authors: []
 tags: []
 draft: true
+description: ""
+image: ""
 ---
 
 # {{ replace .File.ContentBaseName "-" " " | title }}

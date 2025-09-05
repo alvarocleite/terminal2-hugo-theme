@@ -33,6 +33,21 @@
       </div>
     </div>
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Project",
+      "name": "{{ .Title }}",
+      "description": "{{ .Description }}",
+      "url": "{{ .Permalink }}",
+      {{ if .Params.image }}"image": "{{ .Params.image | absURL }}",{{ end }}
+      "author": {
+        "@type": "Person",
+        "name": "{{ .Site.Params.mainAuthor }}"
+      }
+    }
+    </script>
+
     {{ partial "footer_regular.html" .}}
   </div>
   

@@ -47,18 +47,18 @@ outputs:
   home:
     - HTML
     - RSS
-#     - sitemap-blog.xml
+    - sitemap
   section:
     - HTML
     - RSS
-#     - sitemap.xml
-  page:
-    - HTML
-#     - sitemap-posts.xml
+    - sitemap
   taxonomy:
     - HTML
     - RSS
-#     - sitemap-projects.xml
+    - sitemap
+  page:
+    - HTML
+    - sitemap
 params:
   social:
     - name: github

@@ -7,6 +7,8 @@ tags: []
 label: 
 weight:
 draft: true
+description: ""
+image: ""
 ---
 
 # {{ replace .File.ContentBaseName "-" " " | title }}

@@ -11,5 +11,18 @@
     </div>
   </div>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ .Site.Params.mainAuthor }}",
+    "url": "{{ .Permalink }}",
+    "image": "{{ .Site.Params.avatarUrl }}",
+    "sameAs": [
+      {{ range $index, $element := .Site.Params.social }}{{ if $index }}, {{ end }}"{{ .url }}"{{ end }}
+    ]
+  }
+  </script>
+
   {{ partial "footer_regular.html" . }}
 {{ end }}
