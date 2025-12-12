@@ -11,11 +11,11 @@
   <!-- Do not include title of the website in navigation for homepage -->
   {{ if ne .Permalink .Site.BaseURL }}
     <div class="flex flex-col gap-1">
-      <a href="{{ .Site.BaseURL }}" class="text-4xl font-bold hover:text-sky-400 whitespace-nowrap">{{ .Site.Params.menuTitle }}</a>
+      <a href="{{ .Site.BaseURL }}" class="text-4xl font-bold hover:text-primary-400 whitespace-nowrap">{{ .Site.Params.menuTitle }}</a>
     </div>
   {{ end }}
 
-  <div class="dropdown-menu flex flex-row absolute max-lg:w-full max-lg:items-center max-lg:justify-center max-lg:-top-full lg:static max-lg:bg-slate-900 max-lg:h-[calc(100dvh)] max-lg:left-0">
+  <div class="dropdown-menu flex flex-row absolute max-lg:w-full max-lg:items-center max-lg:justify-center max-lg:-top-full lg:static max-lg:bg-canvas-900 max-lg:h-[calc(100dvh)] max-lg:left-0">
     <ul class="flex flex-col lg:flex-row gap-4">
       {{ partial "default_menu.html" . }}
     </ul>

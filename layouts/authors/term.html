@@ -22,7 +22,7 @@
         {{ end }}
         {{ $uniqueTags := $tags | uniq }}
         {{ range $uniqueTags }}
-          <a href="{{ "tags/" | relLangURL }}{{ . | urlize }}" class="border border-sky-400 p-1 hover:bg-sky-400 focus:bg-sky-400 text-center whitespace-nowrap">{{ . }}</a>
+          <a href="{{ "tags/" | relLangURL }}{{ . | urlize }}" class="border border-primary-400 p-1 hover:bg-primary-400 focus:bg-primary-400 text-center whitespace-nowrap">{{ . }}</a>
         {{ end }}
       </div>
     </div>

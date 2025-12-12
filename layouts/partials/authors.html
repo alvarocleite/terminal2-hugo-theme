@@ -2,7 +2,7 @@
 <div class="flex flex-wrap gap-2">
   {{ range .Params.authors }}
     <a href='{{ "/authors/" | relLangURL }}{{ . | urlize }}'
-      class="border border-orange-400 p-1 hover:bg-orange-400 focus:bg-orange-400 text-center focus:text-color-white">
+      class="border border-secondary-400 p-1 hover:bg-secondary-400 focus:bg-secondary-400 text-center focus:text-color-white">
       {{ . }}
     </a>
   {{ end }}
