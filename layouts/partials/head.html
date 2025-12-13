@@ -9,8 +9,9 @@
 <meta property="og:description" content="{{ .Description | default .Summary }}" />
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
-{{ if .Params.image }}
-<meta property="og:image" content="{{ .Params.image | absURL }}" />
+{{ $ogImage := .Params.image | default site.Params.defaultImage | default site.Params.avatarUrl }}
+{{ if $ogImage }}
+<meta property="og:image" content="{{ $ogImage | absURL }}" />
 {{ end }}
 <meta property="og:site_name" content="{{ site.Title }}" />
 
@@ -18,8 +19,8 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}" />
 <meta name="twitter:description" content="{{ .Description | default .Summary }}" />
-{{ if .Params.image }}
-<meta name="twitter:image" content="{{ .Params.image | absURL }}" />
+{{ if $ogImage }}
+<meta name="twitter:image" content="{{ $ogImage | absURL }}" />
 {{ end }}
 
 {{ partialCached "head/css.html" . }}

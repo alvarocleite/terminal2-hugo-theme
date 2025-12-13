@@ -25,6 +25,12 @@ pagerSize: 10
 permalinks:
   posts: "/posts/:year/:month/:day/:title/"
   projects: "/projects/:year/:month/:title/"
+
+sitemap:
+  changefreq: "daily"
+  filename: "sitemap.xml"
+  priority: 0.5
+
 taxonomies:
   tag: "tags"
   author: "authors"
@@ -78,6 +84,8 @@ params:
   mainAuthor: "My Name"
   tagline: "My Tagline"
   avatarUrl: "https://tinyurl.com/45aym7mk"
+  # Default image for Open Graph (social sharing) if page has no specific image
+  # defaultImage: /images/default-og.png
 # Menu titles
   menuTitle: "My Website"
   mainSections:
