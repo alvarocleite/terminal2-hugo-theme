@@ -8,7 +8,7 @@ homepage = 'https://github.com/alvarocleite/terminal2-hugo-theme'
 
 # If you have a running demo of the theme
 # TODO: Add a demo site
-#demosite = 'https://nayanseth.com'
+#demosite = 'https://demosite.com'
 
 # Taxonomy terms
 tags = ['blog', 'personal', 'responsive', 'terminal', 'dark mode', 'minimal', 'dark']
@@ -18,4 +18,4 @@ features = ['blog', 'personal', 'responsive', 'terminal', 'dark mode', 'minimal'
 [author]
   name = 'Alvaro Castro Leite'
 # TODO: Add personal site
-#  homepage = 'https://nayanseth.com'
+#  homepage = 'https://mysite.com'
