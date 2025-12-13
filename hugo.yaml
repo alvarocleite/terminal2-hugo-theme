@@ -70,7 +70,9 @@ params:
     - name: linkedin
       url: https://linkedin.com/in/myusername
     - name: "buy me a coffee"
-      url: https://www.buymeacoffee.com/myusername  
+      url: https://www.buymeacoffee.com/alvarocl
+#    - name: "rss"
+#      url: "https://mywebsite.com/index.xml"
   disqus: false
 # Optional variables that used to build the homepage
   mainAuthor: "My Name"

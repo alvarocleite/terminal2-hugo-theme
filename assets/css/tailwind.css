@@ -107,7 +107,7 @@
 }
 
 /*
-! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -801,7 +801,7 @@ svg {
   font-weight: 500;
   font-family: inherit;
   color: var(--tw-prose-kbd);
-  box-shadow: 0 0 0 1px rgb(var(--tw-prose-kbd-shadows) / 10%), 0 3px 0 rgb(var(--tw-prose-kbd-shadows) / 10%);
+  box-shadow: 0 0 0 1px var(--tw-prose-kbd-shadows), 0 3px 0 var(--tw-prose-kbd-shadows);
   font-size: 0.875em;
   border-radius: 0.3125rem;
   padding-top: 0.1875em;
@@ -964,7 +964,7 @@ svg {
   --tw-prose-quote-borders: #e5e7eb;
   --tw-prose-captions: #6b7280;
   --tw-prose-kbd: #111827;
-  --tw-prose-kbd-shadows: 17 24 39;
+  --tw-prose-kbd-shadows: rgb(17 24 39 / 10%);
   --tw-prose-code: #111827;
   --tw-prose-pre-code: #e5e7eb;
   --tw-prose-pre-bg: #1f2937;
@@ -982,7 +982,7 @@ svg {
   --tw-prose-invert-quote-borders: #374151;
   --tw-prose-invert-captions: #9ca3af;
   --tw-prose-invert-kbd: #fff;
-  --tw-prose-invert-kbd-shadows: 255 255 255;
+  --tw-prose-invert-kbd-shadows: rgb(255 255 255 / 10%);
   --tw-prose-invert-code: #fff;
   --tw-prose-invert-pre-code: #d1d5db;
   --tw-prose-invert-pre-bg: rgb(0 0 0 / 50%);
@@ -1160,20 +1160,20 @@ svg {
   display: none;
 }
 
-.h-32 {
-  height: 8rem;
+.h-64 {
+  height: 16rem;
 }
 
 .h-\[calc\(100dvh\)\] {
   height: calc(100dvh);
 }
 
-.w-32 {
-  width: 8rem;
-}
-
 .w-5\/12 {
   width: 41.666667%;
+}
+
+.w-64 {
+  width: 16rem;
 }
 
 .w-full {
@@ -1268,14 +1268,14 @@ svg {
   border-left-width: 1px;
 }
 
-.border-orange-400 {
-  --tw-border-opacity: 1;
-  border-color: rgb(251 146 60 / var(--tw-border-opacity, 1));
-}
-
-.border-sky-400 {
+.border-primary-400 {
   --tw-border-opacity: 1;
   border-color: rgb(56 189 248 / var(--tw-border-opacity, 1));
+}
+
+.border-secondary-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(251 146 60 / var(--tw-border-opacity, 1));
 }
 
 .bg-gradient-to-r {
@@ -1379,14 +1379,14 @@ svg {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
-.hover\:bg-orange-400:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(251 146 60 / var(--tw-bg-opacity, 1));
-}
-
-.hover\:bg-sky-400:hover {
+.hover\:bg-primary-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(56 189 248 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-secondary-400:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 146 60 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:fill-amber-400:hover {
@@ -1395,6 +1395,10 @@ svg {
 
 .hover\:fill-blue-400:hover {
   fill: #60a5fa;
+}
+
+.hover\:fill-orange-500:hover {
+  fill: #f97316;
 }
 
 .hover\:fill-red-600:hover {
@@ -1409,26 +1413,30 @@ svg {
   fill: #8b5cf6;
 }
 
-.hover\:text-sky-400:hover {
+.hover\:text-primary-400:hover {
   --tw-text-opacity: 1;
   color: rgb(56 189 248 / var(--tw-text-opacity, 1));
 }
 
-.focus\:bg-orange-400:focus {
+.focus\:bg-primary-400:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgb(56 189 248 / var(--tw-bg-opacity, 1));
+}
+
+.focus\:bg-secondary-400:focus {
   --tw-bg-opacity: 1;
   background-color: rgb(251 146 60 / var(--tw-bg-opacity, 1));
 }
 
-.focus\:bg-sky-400:focus {
-  --tw-bg-opacity: 1;
-  background-color: rgb(56 189 248 / var(--tw-bg-opacity, 1));
+.focus\:fill-orange-500:focus {
+  fill: #f97316;
 }
 
 .focus\:fill-violet-500:focus {
   fill: #8b5cf6;
 }
 
-.focus\:text-sky-400:focus {
+.focus\:text-primary-400:focus {
   --tw-text-opacity: 1;
   color: rgb(56 189 248 / var(--tw-text-opacity, 1));
 }
@@ -1466,7 +1474,7 @@ svg {
     justify-content: center;
   }
 
-  .max-lg\:bg-slate-900 {
+  .max-lg\:bg-canvas-900 {
     --tw-bg-opacity: 1;
     background-color: rgb(15 23 42 / var(--tw-bg-opacity, 1));
   }
