@@ -7,9 +7,9 @@
 </head>
 
 <body class="bg-gradient-to-r from-canvas-900 to-canvas-800 font-body text-white">
-  <div class="container mx-auto flex flex-col px-4 xl:w-8/12 sm:max-w-full">
+  <main class="container mx-auto flex flex-col px-4 xl:w-8/12 sm:max-w-full">
     {{ block "main" . }}{{ end }}
-  </div>
+  </main>
   {{ partialCached "head/js.html" . }}
 <!-- TODO: Enable Disqus comments by adding your Disqus shortname in the site config and uncommenting the code below
   <script id="dsq-scr" src="//your.disqus.com/script.js" async></script>

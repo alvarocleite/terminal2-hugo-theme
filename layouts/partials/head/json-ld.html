@@ -1,0 +1,37 @@
+{{ if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ .Site.Params.mainAuthor }}",
+  "url": "{{ .Site.BaseURL }}",
+  "image": "{{ .Site.Params.avatarUrl }}",
+  "description": "{{ .Site.Params.tagline }}",
+  "sameAs": [
+    {{ range $index, $social := .Site.Params.social }}
+      {{ if $index }},{{ end }}"{{ $social.url }}"
+    {{ end }}
+  ]
+}
+</script>
+{{ else if .IsPage }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ .Title }}",
+  "image": "{{ if .Params.image }}{{ .Params.image | absURL }}{{ else }}{{ .Site.Params.avatarUrl }}{{ end }}",
+  "editor": "{{ .Site.Params.mainAuthor }}",
+  "url": "{{ .Permalink }}",
+  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05-07:00" }}",
+  "dateCreated": "{{ .Date.Format "2006-01-02T15:04:05-07:00" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" }}",
+  "description": "{{ .Description | default .Summary }}",
+  "articleBody": "{{ .Content | plainify }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ .Site.Params.mainAuthor }}"
+  }
+}
+</script>
+{{ end }}
