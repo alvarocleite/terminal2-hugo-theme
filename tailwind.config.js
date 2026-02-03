@@ -27,6 +27,33 @@ module.exports = {
         serif: BODY_FONT_MAP.serif,
         mono: BODY_FONT_MAP.mono,
       },
+      typography: ({ theme }) => ({
+        DEFAULT: {
+          css: {
+            'code::before': {
+              content: '""',
+            },
+            'code::after': {
+              content: '""',
+            },
+            code: {
+              backgroundColor: theme('colors.slate.200'),
+              color: theme('colors.slate.800'),
+              padding: '0.25rem 0.375rem',
+              borderRadius: '0.25rem',
+              fontWeight: '400',
+            },
+          },
+        },
+        invert: {
+          css: {
+            code: {
+              backgroundColor: theme('colors.slate.800'),
+              color: theme('colors.primary.400'),
+            },
+          },
+        },
+      }),
     },
   },
   plugins: [
